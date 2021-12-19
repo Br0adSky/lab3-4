@@ -1,12 +1,13 @@
 package org.nsu.fit.tm_backend.manager;
 
-import org.slf4j.Logger;
+import org.apache.commons.validator.routines.EmailValidator;
 import org.nsu.fit.tm_backend.database.IDBService;
 import org.nsu.fit.tm_backend.database.data.ContactPojo;
 import org.nsu.fit.tm_backend.database.data.CustomerPojo;
 import org.nsu.fit.tm_backend.database.data.TopUpBalancePojo;
 import org.nsu.fit.tm_backend.manager.auth.data.AuthenticatedUserDetails;
 import org.nsu.fit.tm_backend.shared.Globals;
+import org.slf4j.Logger;
 
 import java.util.List;
 import java.util.UUID;
@@ -29,6 +30,26 @@ public class CustomerManager extends ParentManager {
         if (customer == null) {
             throw new IllegalArgumentException("Argument 'customer' is null.");
         }
+
+        if (customer.firstName.length() < 2 || customer.firstName.length() > 12)
+            throw new IllegalArgumentException("Too long or short name.");
+
+        if (!Character.isUpperCase(customer.firstName.charAt(0)))
+            throw new IllegalArgumentException("Name not starts with upper case.");
+
+//        if (dbService.getCustomerByLogin(customer.login) != null) {
+//            throw new IllegalArgumentException("Same email.");
+//        }
+
+        if(!EmailValidator.getInstance().isValid(customer.login)){
+            throw new IllegalArgumentException("Invalid email.");
+        }
+
+        if(!customer.lastName.matches("[a-zA-Z]+"))
+            throw new IllegalArgumentException("Last name contains symbols or digits.");
+
+        if (customer.lastName.matches(".*\\s+.*"))
+            throw new IllegalArgumentException("Last name contains spaces.");
 
         if (customer.pass == null) {
             throw new IllegalArgumentException("Field 'customer.pass' is null.");
@@ -89,6 +110,10 @@ public class CustomerManager extends ParentManager {
      * Метод добавляет к текущему баласу переданное значение, которое должно быть строго больше нуля.
      */
     public CustomerPojo topUpBalance(TopUpBalancePojo topUpBalancePojo) {
+        if(topUpBalancePojo.money<0){
+            throw new IllegalArgumentException("Top downed");
+        }
+
         CustomerPojo customerPojo = dbService.getCustomer(topUpBalancePojo.customerId);
 
         customerPojo.balance += topUpBalancePojo.money;

@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import org.nsu.fit.services.browser.Browser;
 import org.nsu.fit.services.browser.BrowserService;
 
-public class CreateCustomerTest {
+public class AuthAsAdminAndCustomerTest {
     private Browser browser = null;
 
     @BeforeClass
@@ -18,20 +18,21 @@ public class CreateCustomerTest {
         browser = BrowserService.openNewBrowser();
     }
 
-    @Test(description = "Create customer via UI.")
+    @Test(description = "Auth as admin")
     @Severity(SeverityLevel.BLOCKER)
     @Feature("Create customer feature")
-    public void createCustomer() {
+    public void authAsAdmin() {
         new LoginScreen(browser)
                 .loginAsAdmin()
-                .createCustomer()
-                .fillEmail("john_wick@example.com")
-                .fillPassword("Baba_Jaga")
-                .fillFirstName("John")
-                .fillLastName("Wick");
+                .logout();
+    }
 
-        // Лабораторная 4: Проверить что customer создан с ранее переданными полями.
-        // Решить проблему с генерацией случайных данных.
+    @Test(description = "Auth as created customer")
+    @Severity(SeverityLevel.CRITICAL)
+    public void authAsCustomer(){
+        new LoginScreen((browser))
+                .loginAsCustomer("sydneyvandervort@mail.com", "strongpass")
+                .logout();
     }
 
     @AfterClass

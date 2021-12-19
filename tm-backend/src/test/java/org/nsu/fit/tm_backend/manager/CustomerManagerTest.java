@@ -1,17 +1,15 @@
 package org.nsu.fit.tm_backend.manager;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import org.slf4j.Logger;
 import org.nsu.fit.tm_backend.database.IDBService;
 import org.nsu.fit.tm_backend.database.data.CustomerPojo;
+import org.slf4j.Logger;
 
 import java.util.UUID;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
 // Лабораторная 2: покрыть юнит тестами класс CustomerManager на 100%.
@@ -88,8 +86,8 @@ class CustomerManagerTest {
         createCustomerInput = new CustomerPojo();
         createCustomerInput.firstName = "John";
         createCustomerInput.lastName = "Wick";
-        createCustomerInput.login = "john_wick@example.com";
-        createCustomerInput.pass = "123qwe";
+        createCustomerInput.login = "john_wickexample.com";
+        createCustomerInput.pass = "strongpass";
         createCustomerInput.balance = 0;
 
         Exception exception = assertThrows(IllegalArgumentException.class, () -> customerManager.createCustomer(createCustomerInput));

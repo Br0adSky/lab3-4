@@ -47,25 +47,25 @@ class AddCustomerPage extends React.Component {
         // <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
         return (
             <form onSubmit={this.handleSubmit}>
-                <h3>Crete new customer</h3>
-                <FormGroup>
+                <h3>Create new customer</h3>
+                <FormGroup controlId="firstName">
                     <FormLabel>First name</FormLabel>
                     <FormControl type="text" name="firstName" value={this.state.firstName} onChange={this.handleChange} />
                 </FormGroup>
 
-                <FormGroup>
+                <FormGroup controlId="lastName">
                     <FormLabel>Last name</FormLabel>
                     <FormControl type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange} />
                 </FormGroup>
 
-                <FormGroup>
+                <FormGroup controlId="login">
                     <FormLabel>Email address</FormLabel>
                     <FormControl type="text" name="login" value={this.state.login} onChange={this.handleChange} />
                 </FormGroup>
 
-                <FormGroup>
+                <FormGroup controlId="password">
                     <FormLabel>Password</FormLabel>
-                    <FormControl type="text" name="password" value={this.state.password} onChange={this.handleChange} />
+                    <FormControl type="password" name="password" value={this.state.password} onChange={this.handleChange}/>
                 </FormGroup>
 
                 <ButtonToolbar aria-label="Toolbar with button groups">

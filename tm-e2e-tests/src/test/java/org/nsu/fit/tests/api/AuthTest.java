@@ -19,7 +19,7 @@ public class AuthTest {
         adminToken = new RestClient().authenticate("admin", "setup");
     }
 
-    @Test(description = "Authenticate as admin.", dependsOnMethods = "authAsAdminTest")
+    @Test(description = "Authenticate as customer.", dependsOnMethods = "authAsAdminTest")
     @Severity(SeverityLevel.BLOCKER)
     @Feature("Authentication feature.")
     public void authAsCustomerTest() {

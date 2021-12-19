@@ -21,6 +21,16 @@ public class PlanManager extends ParentManager {
      * fee - больше либо равно 0 но меньше либо равно 5000.
      */
     public PlanPojo createPlan(PlanPojo plan) {
+        if(plan.name.length() <=2 || plan.name.length()>= 128){
+            throw new IllegalArgumentException("длина не может быть больше 128 символов и не меньше 2");
+        }
+        if(plan.details.length() <=1 || plan.details.length()>= 1024){
+            throw new IllegalArgumentException("длина не может быть больше 1024 символов и не меньше 1");
+        }
+        if(plan.fee<=0 || plan.fee>= 5000){
+            throw new IllegalArgumentException("цена должна быть в пределах от 0 до 5000");
+        }
+
         return dbService.createPlan(plan);
     }
 

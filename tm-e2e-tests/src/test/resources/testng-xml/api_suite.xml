@@ -5,4 +5,55 @@
             <class name="org.nsu.fit.tests.api.AuthTest" />
         </classes>
     </test>
+    <test name="PlanTest">
+        <classes>
+            <class name="org.nsu.fit.tests.api.PlanTest" />
+        </classes>
+    </test>
+    <test name="TopUpBalanceTest">
+        <classes>
+            <class name="org.nsu.fit.tests.api.TopUpBalanceTest" />
+        </classes>
+    </test>
+    <test name="BadCustomerFirstNameTest">
+        <classes>
+            <class name="org.nsu.fit.tests.api.BadCustomerFirstNameTest" />
+        </classes>
+    </test>
+    <test name="BadCustomerLastNameTest">
+        <classes>
+            <class name="org.nsu.fit.tests.api.BadCustomerLastNameTest" />
+        </classes>
+    </test>
+    <test name="BadCustomerPasswordTest">
+        <classes>
+            <class name="org.nsu.fit.tests.api.BadCustomerPasswordTest" />
+        </classes>
+    </test>
+    <test name="BadLoginTest">
+        <classes>
+            <class name="org.nsu.fit.tests.api.BadLoginTest" />
+        </classes>
+    </test>
+    <test name="BadPlanDetailsTest">
+        <classes>
+            <class name="org.nsu.fit.tests.api.BadPlanDetailsTest" />
+        </classes>
+    </test>
+    <test name="BadPlanFee">
+        <classes>
+            <class name="org.nsu.fit.tests.api.BadPlanFee" />
+        </classes>
+    </test>
+    <test name="BadPlanNameTest">
+        <classes>
+            <class name="org.nsu.fit.tests.api.BadPlanNameTest" />
+        </classes>
+    </test>
+    <test name="CustomerTest">
+        <classes>
+            <class name="org.nsu.fit.tests.api.CustomerTest" />
+        </classes>
+    </test>
 </suite>
+

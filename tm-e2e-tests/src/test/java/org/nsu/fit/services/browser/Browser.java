@@ -1,7 +1,10 @@
 package org.nsu.fit.services.browser;
 
 import io.qameta.allure.Attachment;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
@@ -10,7 +13,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.Closeable;
 import java.io.File;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -40,7 +42,7 @@ public class Browser implements Closeable {
                 // Для того чтобы подобрать нужный chromedriver, необходимо посмотреть версию браузера Chrome
                 // на системе, на которой будут запускаться тесты и скачать соотвествующий ей chromedriver с сайта:
                 // https://chromedriver.chromium.org/downloads
-                System.setProperty("webdriver.chrome.driver", "C:/Tools/chromedriver/chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "C:/Tools/chromedriver.exe");
                 chromeOptions.setHeadless(Boolean.parseBoolean(System.getProperty("headless")));
                 webDriver = new ChromeDriver(chromeOptions);
             } else {
@@ -95,6 +97,12 @@ public class Browser implements Closeable {
     public String getValue(By element) {
         makeScreenshot();
         return webDriver.findElement(element).getAttribute("value");
+    }
+
+    public Browser clear(By element){
+        makeScreenshot();
+        webDriver.findElement(element).clear();
+        return this;
     }
 
     public boolean isElementPresent(By element) {

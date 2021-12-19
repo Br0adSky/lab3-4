@@ -45,17 +45,17 @@ class AddPlanPage extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <h3>Create new plan</h3>
 
-                <FormGroup>
+                <FormGroup controlId="name">
                     <FormLabel>Name</FormLabel>
                     <FormControl type="text" name="name" value={this.state.name} onChange={this.handleChange} />
                 </FormGroup>
 
-                <FormGroup>
+                <FormGroup controlId="details">
                     <FormLabel>Details</FormLabel>
                     <FormControl type="text" name="details" value={this.state.details} onChange={this.handleChange} />
                 </FormGroup>
 
-                <FormGroup>
+                <FormGroup controlId="fee">
                     <FormLabel>Fee</FormLabel>
                     <FormControl type="number" name="fee" value={this.state.fee} onChange={this.handleChange} />
                 </FormGroup>
