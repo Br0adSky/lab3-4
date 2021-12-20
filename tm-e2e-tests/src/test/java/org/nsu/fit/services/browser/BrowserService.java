@@ -8,6 +8,7 @@ public class BrowserService {
     public static final String CREATE_CUSTOMER_URI = AUTH_URI + "/add-customer";
     public static final String CREATE_PLAN_URI = AUTH_URI + "/add-plan";
     public static final String LOGIN_URI = AUTH_URI + "/login";
+    public static final String TOP_UP_BALANCE_URI = AUTH_URI + "/top-up-balance";
 
     public static Browser openNewBrowser() {
         return new Browser().openPage(AUTH_URI);
