@@ -189,9 +189,9 @@ public class RestClient {
     }
 
     public List<PlanPojo> getPlans(AccountTokenPojo adminToken) {
-        List<LinkedHashMap<String, String>> list = get("customers", adminToken, true, null);
+        List<LinkedHashMap<String, String>> list = get("plans", adminToken, true, null);
         final ObjectMapper mapper = new ObjectMapper();
-        return list.stream().map(stringStringLinkedHashMap -> mapper.convertValue(stringStringLinkedHashMap, PlanPojo.class)).collect(Collectors.toList());
+        return list.stream().map(linkedHashMap -> mapper.convertValue(linkedHashMap, PlanPojo.class)).collect(Collectors.toList());
 
     }
 

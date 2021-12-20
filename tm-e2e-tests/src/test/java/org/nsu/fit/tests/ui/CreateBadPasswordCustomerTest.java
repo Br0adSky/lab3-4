@@ -53,7 +53,7 @@ public class CreateBadPasswordCustomerTest {
     }
 
     @Test(description = "Create user with simple password.", dependsOnMethods = "shortPasswordTest")
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(SeverityLevel.BLOCKER)
     @Feature("Create customer feature.")
     public void simplePasswordTest() {
         String pass = "123qwe";

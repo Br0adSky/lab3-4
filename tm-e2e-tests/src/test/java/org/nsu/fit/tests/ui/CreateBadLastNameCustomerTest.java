@@ -53,7 +53,7 @@ public class CreateBadLastNameCustomerTest {
     }
 
     @Test(description = "Create user with wrong last name - contains space.", dependsOnMethods = "nameContainsDigitsTest")
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(SeverityLevel.BLOCKER)
     @Feature("Create customer feature.")
     public void nameNotStartsWithUpperCaseTest() {
         String name = "Petrov Petrov";

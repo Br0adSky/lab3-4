@@ -20,7 +20,7 @@ public class AuthAsAdminAndCustomerTest {
 
     @Test(description = "Auth as admin")
     @Severity(SeverityLevel.BLOCKER)
-    @Feature("Create customer feature")
+    @Feature("Auth feature")
     public void authAsAdmin() {
         new LoginScreen(browser)
                 .loginAsAdmin()
@@ -28,7 +28,8 @@ public class AuthAsAdminAndCustomerTest {
     }
 
     @Test(description = "Auth as created customer")
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(SeverityLevel.BLOCKER)
+    @Feature("Auth feature")
     public void authAsCustomer(){
         new LoginScreen((browser))
                 .loginAsCustomer("sydneyvandervort@mail.com", "strongpass")

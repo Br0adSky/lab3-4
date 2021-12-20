@@ -38,6 +38,11 @@ public class PlanScreen extends Screen {
         return new AdminScreen(browser);
     }
 
+    public PlanScreen clearAll(String id) {
+        browser.clear(By.id(id));
+        return this;
+    }
+
     public AdminScreen clickCancel() {
         return new AdminScreen(browser);
     }

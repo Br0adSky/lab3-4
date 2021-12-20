@@ -34,4 +34,5 @@ public class LoginScreen extends Screen {
         browser.click(By.xpath("//button[@type = 'submit']"));
         return new CustomerScreen(browser);
     }
+
 }

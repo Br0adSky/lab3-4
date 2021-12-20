@@ -40,6 +40,7 @@ public class CreateBadFeePlanTest {
         int badField = -1;
         plan.fee = badField;
         screen.fillDetails(plan.details)
+                .clearAll("fee")
                 .fillFee(plan.fee)
                 .fillName(plan.name)
                 .clickSubmit();
@@ -51,7 +52,7 @@ public class CreateBadFeePlanTest {
     }
 
     @Test(description = "Create plan with too high fee.", dependsOnMethods = "feeIsNegativeTest")
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(SeverityLevel.BLOCKER)
     @Feature("Create plan feature.")
     public void feeIsHighTest() {
         PlanPojo plan = restClient.fillValidPlan();

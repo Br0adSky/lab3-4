@@ -33,9 +33,9 @@ public class TopUpBalanceTest {
 
     }
 
-    @Test(description = "Create user with wrong first name.")
+    @Test(description = "Top up balance good.")
     @Severity(SeverityLevel.BLOCKER)
-    @Feature("Create customer feature.")
+    @Feature("Top up balance feature.")
     public void topUpBalanceTest() {
         int money = 500;
         screen.clearAll("topUpBalance");
@@ -44,9 +44,9 @@ public class TopUpBalanceTest {
         browser.openPage(TOP_UP_BALANCE_URI);
     }
 
-    @Test(description = "Create user with wrong first name.", dependsOnMethods = "topUpBalanceTest")
-    @Severity(SeverityLevel.CRITICAL)
-    @Feature("Create customer feature.")
+    @Test(description = "Top up balance bad.", dependsOnMethods = "topUpBalanceTest")
+    @Severity(SeverityLevel.BLOCKER)
+    @Feature("Top up balance feature.")
     public void wrongTopUpBalanceTest() {
         int money = -1;
         screen.clearAll("topUpBalance");

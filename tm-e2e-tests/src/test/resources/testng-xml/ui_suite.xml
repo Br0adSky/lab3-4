@@ -1,13 +1,53 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite verbose="1" name="UI Tests" annotations="JDK" parallel="tests" thread-count="2">
+<suite verbose="1" name="UI Tests" annotations="JDK" parallel="tests" thread-count="3">
     <test name="Auth test">
         <classes>
             <class name="org.nsu.fit.tests.ui.AuthAsAdminAndCustomerTest" />
         </classes>
     </test>
-    <test name="">
+    <test name="Bad details plan test">
         <classes>
-            <class name="org.nsu.fit.tests.ui.AuthAsAdminAndCustomerTest" />
+            <class name="org.nsu.fit.tests.ui.CreateBadDetailsPlanTest" />
+        </classes>
+    </test>
+    <test name="Bad fee plan test">
+        <classes>
+            <class name="org.nsu.fit.tests.ui.CreateBadFeePlanTest" />
+        </classes>
+    </test>
+    <test name="Bad name plan test">
+        <classes>
+            <class name="org.nsu.fit.tests.ui.CreateBadPlanNameTest" />
+        </classes>
+    </test>
+    <test name="Bad first name customer test">
+        <classes>
+            <class name="org.nsu.fit.tests.ui.CreateBadFirstNameCustomerTest" />
+        </classes>
+    </test>
+    <test name="Bad last name customer test">
+        <classes>
+            <class name="org.nsu.fit.tests.ui.CreateBadLastNameCustomerTest" />
+        </classes>
+    </test>
+    <test name="Bad login customer test">
+        <classes>
+            <class name="org.nsu.fit.tests.ui.CreateBadLoginCustomerTest" />
+        </classes>
+    </test>
+    <test name="Bad password customer test">
+        <classes>
+            <class name="org.nsu.fit.tests.ui.CreateBadPasswordCustomerTest" />
+        </classes>
+    </test>
+    <test name="Good plan and customer test">
+        <classes>
+            <class name="org.nsu.fit.tests.ui.CreatePlanAndCustomerTest" />
+        </classes>
+    </test>
+    <test name="Good and bad top up balance test">
+        <classes>
+            <class name="org.nsu.fit.tests.ui.TopUpBalanceTest" />
         </classes>
     </test>
 </suite>

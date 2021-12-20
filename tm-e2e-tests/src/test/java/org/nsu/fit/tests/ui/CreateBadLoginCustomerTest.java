@@ -53,7 +53,7 @@ public class CreateBadLoginCustomerTest {
     }
 
     @Test(description = "Not contains @ in login.", dependsOnMethods = "wrongDomainLoginTest")
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(SeverityLevel.BLOCKER)
     @Feature("Create customer feature.")
     public void wrongAtLoginTest() {
         String name = "john_wickexample.com";

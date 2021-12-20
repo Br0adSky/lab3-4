@@ -46,12 +46,12 @@ public class CreateBadPlanNameTest {
         screen.clearAll("name");
         List<PlanPojo> plans = restClient.getPlans(adminToken);
         for (PlanPojo pln : plans) {
-            assert pln.name != badField;
+            assert !pln.name.equals(badField);
         }
     }
 
     @Test(description = "Create plan with long name.", dependsOnMethods = "feeIsNegativeTest")
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(SeverityLevel.BLOCKER)
     @Feature("Create plan feature.")
     public void feeIsHighTest() {
         PlanPojo plan = restClient.fillValidPlan();
@@ -62,7 +62,7 @@ public class CreateBadPlanNameTest {
         screen.clearAll("name");
         List<PlanPojo> plans = restClient.getPlans(adminToken);
         for (PlanPojo pln : plans) {
-            assert pln.name != badField;
+            assert !pln.name.equals(badField);
         }
     }
 

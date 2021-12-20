@@ -33,7 +33,7 @@ public class CreateBadFirstNameCustomerTest {
 
     }
 
-    @Test(description = "Create user with wrong first name.")
+    @Test(description = "Create user with short first name.")
     @Severity(SeverityLevel.BLOCKER)
     @Feature("Create customer feature.")
     public void shortNameTest() {
@@ -53,8 +53,8 @@ public class CreateBadFirstNameCustomerTest {
 
     }
 
-    @Test(description = "Create user with wrong first name.", dependsOnMethods = "shortNameTest")
-    @Severity(SeverityLevel.CRITICAL)
+    @Test(description = "Create user with lower case first name.", dependsOnMethods = "shortNameTest")
+    @Severity(SeverityLevel.BLOCKER)
     @Feature("Create customer feature.")
     public void nameNotStartsWithUpperCaseTest() {
         String name = "name";

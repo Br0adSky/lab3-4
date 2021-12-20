@@ -25,7 +25,7 @@ public class CreatePlanAndCustomerTest {
     }
 
     @Test(description = "Create plan.")
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(SeverityLevel.BLOCKER)
     @Feature("Create plan feature.")
     public void addNewPlanTest() {
         PlanPojo plan = createValidPlan();
@@ -39,7 +39,7 @@ public class CreatePlanAndCustomerTest {
     }
 
     @Test(description = "Create customer via UI.")
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(SeverityLevel.BLOCKER)
     @Feature("Create customer feature")
     public void createCustomer() {
         CustomerPojo customerPojo = createValidCustomer();
