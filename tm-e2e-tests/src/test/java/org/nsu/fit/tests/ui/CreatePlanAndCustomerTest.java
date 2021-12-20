@@ -26,7 +26,7 @@ public class CreatePlanAndCustomerTest {
 
     @Test(description = "Create plan.")
     @Severity(SeverityLevel.CRITICAL)
-    @Feature("Plan feature.")
+    @Feature("Create plan feature.")
     public void addNewPlanTest() {
         PlanPojo plan = createValidPlan();
         new LoginScreen(browser)

@@ -33,7 +33,7 @@ public class CreateBadLoginCustomerTest {
 
     }
 
-    @Test(description = "Create user with wrong first name.")
+    @Test(description = "Not contains .domain in login.")
     @Severity(SeverityLevel.BLOCKER)
     @Feature("Create customer feature.")
     public void wrongDomainLoginTest() {
@@ -52,7 +52,7 @@ public class CreateBadLoginCustomerTest {
         }
     }
 
-    @Test(description = "Create user with wrong first name.", dependsOnMethods = "wrongDomainLoginTest")
+    @Test(description = "Not contains @ in login.", dependsOnMethods = "wrongDomainLoginTest")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("Create customer feature.")
     public void wrongAtLoginTest() {

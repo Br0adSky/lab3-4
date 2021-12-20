@@ -17,7 +17,7 @@ import java.util.List;
 
 import static org.nsu.fit.tests.api.TestInterface.adminToken;
 
-public class CreateBadFeePlanTest {
+public class CreateBadPlanNameTest {
     private Browser browser = null;
     private RestClient restClient;
     private PlanScreen screen;
@@ -32,37 +32,37 @@ public class CreateBadFeePlanTest {
 
     }
 
-    @Test(description = "Create plan with negative fee.")
+    @Test(description = "Create plan with short name.")
     @Severity(SeverityLevel.BLOCKER)
     @Feature("Create plan feature.")
     public void feeIsNegativeTest() {
         PlanPojo plan = restClient.fillValidPlan();
-        int badField = -1;
-        plan.fee = badField;
+        String badField = "u";
+        plan.name = badField;
         screen.fillDetails(plan.details)
                 .fillFee(plan.fee)
                 .fillName(plan.name)
                 .clickSubmit();
-        screen.clearAll("fee");
+        screen.clearAll("name");
         List<PlanPojo> plans = restClient.getPlans(adminToken);
         for (PlanPojo pln : plans) {
-            assert pln.fee != badField;
+            assert pln.name != badField;
         }
     }
 
-    @Test(description = "Create plan with too high fee.", dependsOnMethods = "feeIsNegativeTest")
+    @Test(description = "Create plan with long name.", dependsOnMethods = "feeIsNegativeTest")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("Create plan feature.")
     public void feeIsHighTest() {
         PlanPojo plan = restClient.fillValidPlan();
-        int badField = 100000;
-        plan.fee = badField;
+        String badField = "I would like to start my intervention with a question: who among you would like to see his brother, his sister, a relative whom he likes very much";
+        plan.name = badField;
         screen.fillFee(plan.fee)
                 .clickSubmit();
-        screen.clearAll("fee");
+        screen.clearAll("name");
         List<PlanPojo> plans = restClient.getPlans(adminToken);
         for (PlanPojo pln : plans) {
-            assert pln.fee != badField;
+            assert pln.name != badField;
         }
     }
 

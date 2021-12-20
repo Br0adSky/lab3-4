@@ -32,9 +32,9 @@ public class CreateBadDetailsPlanTest {
 
     }
 
-    @Test(description = "Create user with wrong first name.")
+    @Test(description = "Create plan with short details.")
     @Severity(SeverityLevel.BLOCKER)
-    @Feature("Create customer feature.")
+    @Feature("Create plan feature.")
     public void shortDetailsTest() {
         PlanPojo plan = restClient.fillValidPlan();
         String badField = "1";
@@ -50,9 +50,9 @@ public class CreateBadDetailsPlanTest {
         }
     }
 
-    @Test(description = "Create user with wrong first name.", dependsOnMethods = "shortDetailsTest")
+    @Test(description = "Create plan with long details.", dependsOnMethods = "shortDetailsTest")
     @Severity(SeverityLevel.CRITICAL)
-    @Feature("Create customer feature.")
+    @Feature("Create plan feature.")
     public void longDetailsTest() {
         PlanPojo plan = restClient.fillValidPlan();
         String badField = "I would like to start my intervention with a question: who among you would like to see his brother, his sister, a relative whom he likes very much to be rejected during a work interview or during the registration in an educational establishment either because of a criminal record which considerably limits his opportunities? The answer is no one\n" +

@@ -33,7 +33,7 @@ public class CreateBadLastNameCustomerTest {
 
     }
 
-    @Test(description = "Create user with wrong first name.")
+    @Test(description = "Create user with wrong last name - contains digits.")
     @Severity(SeverityLevel.BLOCKER)
     @Feature("Create customer feature.")
     public void nameContainsDigitsTest() {
@@ -52,7 +52,7 @@ public class CreateBadLastNameCustomerTest {
         }
     }
 
-    @Test(description = "Create user with wrong first name.", dependsOnMethods = "nameContainsDigitsTest")
+    @Test(description = "Create user with wrong last name - contains space.", dependsOnMethods = "nameContainsDigitsTest")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("Create customer feature.")
     public void nameNotStartsWithUpperCaseTest() {
