@@ -1,6 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite verbose="1" name="UI Tests" annotations="JDK" parallel="true">
-    <test name="AcceptanceTest">
+<suite verbose="1" name="UI Tests" annotations="JDK" parallel="tests" thread-count="2">
+    <test name="Auth test">
+        <classes>
+            <class name="org.nsu.fit.tests.ui.AuthAsAdminAndCustomerTest" />
+        </classes>
+    </test>
+    <test name="">
         <classes>
             <class name="org.nsu.fit.tests.ui.AuthAsAdminAndCustomerTest" />
         </classes>

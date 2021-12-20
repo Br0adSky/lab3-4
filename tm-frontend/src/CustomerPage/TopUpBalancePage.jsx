@@ -42,7 +42,7 @@ class TopUpBalancePage extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <h3>Top up balance</h3>
 
-                <FormGroup>
+                <FormGroup controlId="topUpBalance">
                     <FormLabel>Money</FormLabel>
                     <FormControl type="number" name="money" value={this.state.money} onChange={this.handleChange} />
                 </FormGroup>
